@@ -1,0 +1,13 @@
+{
+  "type": "MONSTER",
+  "id": "mon_fungaloid",
+  "copy-from": "mon_fungaloid",
+  "name": { "str": "disabled fungaloid" },
+  "hp": 1,
+  "speed": 1,
+  "symbol": "x",
+  "color": "dark_gray",
+  "special_attacks": [],
+  "vision_day": 0,
+  "vision_night": 0
+}

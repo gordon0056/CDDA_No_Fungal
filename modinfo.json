@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "no_fungal",
+    "name": "No Fungal",
+    "authors": [ "Gordon0056" ],
+    "description": "Removes all fungal monsters and fungal overmap specials.",
+    "category": "rebalance",
+    "dependencies": [ "dda" ]
+  }
+]

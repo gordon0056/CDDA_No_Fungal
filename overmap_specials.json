@@ -1,0 +1,21 @@
+[
+  {
+    "type": "overmap_special",
+    "id": "fungal_tower",
+    "overmaps": [],
+    "occurrences": [ 0, 0 ]
+  },
+  {
+    "type": "overmap_special",
+    "id": "fungal_forest",
+    "overmaps": [],
+    "occurrences": [ 0, 0 ]
+  },
+  {
+    "type": "overmap_special",
+    "id": "fungal_blossom",
+    "overmaps": [],
+    "occurrences": [ 0, 0 ]
+  }
+]
+
