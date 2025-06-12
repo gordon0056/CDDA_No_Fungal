@@ -10,7 +10,7 @@
 
 ## Compatibility
 
-- Compatible with **Cataclysm: DDA 0.H (Hay Fever)** stable version.
+- Compatible with **Cataclysm: DDA 0.H (Herbert)** stable version.
 - Requires the base game (`dda`) as a dependency.
 
 ## Installation
