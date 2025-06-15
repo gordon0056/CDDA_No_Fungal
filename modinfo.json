@@ -1,11 +1,25 @@
 [
   {
     "type": "MOD_INFO",
-    "id": "no_fungal",
-    "name": "No Fungal",
+    "id": "no_fungals",
+    "name": "No Fungals",
     "authors": [ "Gordon0056" ],
-    "description": "Removes all fungal monsters and fungal overmap specials.",
-    "category": "rebalance",
+    "description": "Removes all fungals from the game.",
+    "category": "monster_exclude",
     "dependencies": [ "dda" ]
+  },
+  {
+    "type": "MONSTER_BLACKLIST",
+    "species": [ "FUNGAL" ]
+  },
+  {
+    "type": "region_settings",
+    "regions": [ "all" ],
+    "overmap_feature_flag_settings": {
+      "clear_blacklist": false,
+      "blacklist": [ "FUNGAL" ],
+      "clear_whitelist": true,
+      "whitelist": [ ]
+    }
   }
 ]

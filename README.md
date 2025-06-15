@@ -1,23 +1,24 @@
-# No Fungal
+# No Fungals
 
-**No Fungal** is a simple rebalancing mod for *Cataclysm: Dark Days Ahead*. It disables all fungal monsters and removes fungal-related overmap special locations (e.g., fungal towers, forests, blossoms), effectively eliminating fungal infection threats from the game world.
+This mod completely removes all fungal monsters and their associated overmap locations from Cataclysm: Dark Days Ahead.
 
 ## Features
 
-- Disables core fungal monsters (e.g., fungaloids, spores).
-- Prevents fungal enemies from upgrading or spawning.
-- Removes fungal overmap locations entirely.
+- Excludes all monsters with the `FUNGAL` species tag.
+- Prevents any overmap features (e.g., fungal towers, forests, flowers) tagged with `FUNGAL` from spawning.
+- Clean implementation using vanilla-supported monster and region blacklisting systems.
 
 ## Compatibility
 
-- Compatible with **Cataclysm: DDA 0.H (Herbert)** stable version.
-- Requires the base game (`dda`) as a dependency.
+- Tested with CDDA 0.H (stable) and newer.
+- No core game files modified.
 
 ## Installation
 
-1. Download or clone the repository into your `data/mods/` directory.
-2. Enable `No Fungal` from the in-game mod selection screen when creating a new world.
+1. Clone or download this repository.
+2. Place the `No_Fungal` folder in your `data/mods/` directory.
+3. Enable the mod in the world creation/mod selection menu.
 
-## License
+## Author
 
-Open source under the Creative Commons Zero (CC0) license or same terms as Cataclysm-DDA core data.
+Originally by Gordon0056. Thanks to Procyonae and the CDDA Discord for support.
