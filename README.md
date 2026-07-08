@@ -29,13 +29,16 @@ This is useful for players who want to disable the fungal infection mechanics an
 | 1.1.0 | 2026-07-08 | Updated compatibility to 0.I, added CI validation |
 | 1.0.0 | - | Initial release: removes fungal monsters and overmap locations |
 
-## Troubleshooting
+## FAQ
 
-**Q: Can I still spawn fungal monsters via debug menu?**
-A: Yes. This mod only removes natural spawns. Debug commands bypass the blacklist by design.
+**Q: Does this mod affect existing worlds?**
+A: No. This mod only affects world generation. Enable it before creating a new world.
 
-**Q: I enabled the mod but fungal locations still appear.**
-A: This mod only affects new worlds. You must enable it *before* world generation.
+**Q: Are fungal items and recipes also removed?**
+A: No. This mod only removes monsters and overmap locations. Fungal gear and recipes remain in the game.
+
+**Q: Can fungal enemies still appear through other means?**
+A: Natural spawns and fungal biomes are fully blocked. Debug spawn commands will still work.
 
 ## Author
 
