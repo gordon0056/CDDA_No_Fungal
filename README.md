@@ -1,6 +1,6 @@
 # No Fungal
 
-**Version compatibility**: Tested and works with Cataclysm: Dark Days Ahead `0.H (stable)` and recent experimental builds based on that structure.
+**Version compatibility**: Tested and works with Cataclysm: Dark Days Ahead `0.I (stable)` and recent experimental builds.
 
 ## Description
 
