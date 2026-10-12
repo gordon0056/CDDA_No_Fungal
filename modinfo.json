@@ -2,10 +2,11 @@
   {
     "type": "MOD_INFO",
     "id": "no_fungal",
-    "name": "No Fungal",
+    "name": "No Fungal (0.H/0.I)",
     "authors": [ "Gordon0056" ],
-    "description": "Completely removes all fungal monsters and fungal overmap locations from the game.",
+    "description": "Completely removes all fungal monsters and fungal overmap locations from the game. Variant for CDDA 0.H/0.I stable releases. For 0.J (experimental) and newer, use the No_Fungal_0J folder instead.",
     "category": "monster_exclude",
-    "dependencies": [ "dda" ]
+    "dependencies": [ "dda" ],
+    "version": "2.0.0"
   }
 ]
