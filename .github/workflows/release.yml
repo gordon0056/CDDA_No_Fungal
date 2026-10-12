@@ -1,0 +1,76 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to publish (for example v2.0.0)'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+
+      - name: Package mods
+        run: |
+          set -euo pipefail
+          staging="$(mktemp -d)"
+          out="$GITHUB_WORKSPACE/dist"
+          mkdir -p "$out"
+
+          mkdir -p "$staging/No_Fungal"
+          cp modinfo.json monster_blacklist.json region_settings.json "$staging/No_Fungal/"
+          cp README.md LICENSE "$staging/No_Fungal/"
+          (cd "$staging" && zip -r -q "$out/No_Fungal-0H-0I.zip" No_Fungal)
+
+          if compgen -G "No_Fungal_0J/*.json" > /dev/null; then
+            mkdir -p "$staging/No_Fungal_0J"
+            cp No_Fungal_0J/*.json "$staging/No_Fungal_0J/"
+            cp LICENSE "$staging/No_Fungal_0J/"
+            (cd "$staging" && zip -r -q "$out/No_Fungal_0J.zip" No_Fungal_0J)
+          else
+            echo "No 0.J+ variant in this tag, skipping its archive."
+          fi
+
+          ls -l "$out"
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+        run: |
+          set -euo pipefail
+          notes="Automated build from tag \`$TAG\`.
+
+          Download the archive that matches your game version:
+          * \`No_Fungal-0H-0I.zip\` - CDDA 0.H / 0.I stable
+          * \`No_Fungal_0J.zip\` - CDDA 0.J experimental and newer (2.0.0 and up)
+
+          Unpack it into \`data/mods/\` so the game sees \`data/mods/No_Fungal/\` (or \`data/mods/No_Fungal_0J/\`)."
+
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            echo "Release $TAG exists, replacing assets."
+            gh release upload "$TAG" dist/*.zip --clobber
+          else
+            gh release create "$TAG" dist/*.zip \
+              --verify-tag \
+              --title "No Fungal ${TAG#v}" \
+              --notes "$notes" \
+              --generate-notes
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: no-fungal-packages
+          path: dist/*.zip
+          if-no-files-found: error
